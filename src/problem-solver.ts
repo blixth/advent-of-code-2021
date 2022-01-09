@@ -4,6 +4,8 @@ import {CommandParser} from './Day 2 - Dive!/command-parser';
 import {Submarine} from './Day 2 - Dive!/submarine';
 import {NewNavigationSystem} from './Day 2 - Dive!/new-navigation-system';
 import {OldNavigationSystem} from './Day 2 - Dive!/old-navigation-system';
+import {BinaryDiagnostic} from './Day 3 - Binary Diagnostic/binary-diagnostic';
+import {compact} from 'utilitype';
 
 export class ProblemSolver {
   public static SolvePuzzleOne = async (): Promise<void> => {
@@ -42,5 +44,23 @@ export class ProblemSolver {
     commands.forEach(newSubmarine.execute);
 
     console.log(`The multiple of the submarine is ${newSubmarine.multiple()}`);
+  };
+
+  public static SolvePuzzleThree = async (): Promise<void> => {
+    console.log('Solving 3 - Binary Diagnostic part 1:');
+
+    const input = (await AdventOfCodeClient.getPuzzleInputAsString(3)).map(
+      str => str.split('')
+    );
+
+    const binaryDiagostic = new BinaryDiagnostic(compact(input) as string[][]);
+
+    console.log(
+      `The power consumption is ${binaryDiagostic.powerConsumption()}`
+    );
+
+    console.log(
+      `The life support rating is ${binaryDiagostic.lifeSupportRating()}`
+    );
   };
 }
