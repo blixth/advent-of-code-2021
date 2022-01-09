@@ -3,20 +3,15 @@ import {SESSION_COOKIE} from '../../session-cookie';
 
 export class AdventOfCodeClient {
   public static getPuzzleInputAsString = async (
-    day: number,
-    part: number
-  ): Promise<string[]> => this.getPuzzleInput(day, part);
+    day: number
+  ): Promise<string[]> => this.getPuzzleInput(day);
 
   public static getPuzzleInputAsNumbers = async (
-    day: number,
-    part: number
+    day: number
   ): Promise<number[]> =>
-    (await this.getPuzzleInput(day, part)).map(value => Number(value));
+    (await this.getPuzzleInput(day)).map(value => Number(value));
 
-  private static getPuzzleInput = async (
-    day: number,
-    part: number
-  ): Promise<string[]> => {
+  private static getPuzzleInput = async (day: number): Promise<string[]> => {
     try {
       const config: AxiosRequestConfig = {
         headers: {

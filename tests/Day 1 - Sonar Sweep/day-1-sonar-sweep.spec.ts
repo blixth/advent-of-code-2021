@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {SonarSweep} from '../../src/1 - Sonar Sweep/sonar-sweep';
+import {SonarSweep} from '../../src/Day 1 - Sonar Sweep/sonar-sweep';
 
 describe('1 - Sonar Sweep', () => {
   context('#Example 1', () => {
