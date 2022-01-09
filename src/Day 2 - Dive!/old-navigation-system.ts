@@ -3,8 +3,8 @@ import {INavigationSystem} from './i-navigation-system';
 import {SubmarineCommand} from './submarine-command';
 
 export class OldNavigationSystem implements INavigationSystem {
-  horizontalPosition: number;
-  depth: number;
+  public horizontalPosition: number;
+  public depth: number;
 
   constructor() {
     this.horizontalPosition = 0;
