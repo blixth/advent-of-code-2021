@@ -6,12 +6,8 @@ describe('common', () => {
   context('#getPuzzleInput', () => {
     it('should not be an empty array', async () => {
       const day = 1;
-      const part = 1;
 
-      const result = await AdventOfCodeClient.getPuzzleInputAsNumbers(
-        day,
-        part
-      );
+      const result = await AdventOfCodeClient.getPuzzleInputAsNumbers(day);
 
       assert.strictEqual(true, isPresent(result));
     });

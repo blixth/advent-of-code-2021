@@ -9,6 +9,8 @@ describe('2 - Dive!', () => {
 
       const result = CommandParser.parseCommand(command);
 
+      assert.notStrictEqual(result, null);
+
       if (result !== null) {
         assert.strictEqual(result.direction, CommandDirection.Forward);
         assert.strictEqual(result.amount, 5);
