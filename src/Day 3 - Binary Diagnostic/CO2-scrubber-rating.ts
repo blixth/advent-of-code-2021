@@ -1,5 +1,6 @@
 import {getFromPosition} from '../common/arrays/get-from-position';
 import {getLeastFrequent} from '../common/arrays/get-least-frequent';
+import {filterOnBitInPosition} from './filter-on-bit-in-position';
 
 export class CO2ScrubberRating {
   private binaryInput: Array<Array<string>>;
@@ -19,7 +20,7 @@ export class CO2ScrubberRating {
       );
 
       this.binaryInput = this.binaryInput.filter(arr =>
-        this.filterOnBitInPosition(arr, mostCommonBit, i)
+        filterOnBitInPosition(arr, mostCommonBit, i)
       );
 
       if (this.binaryInput.length === 1) {
@@ -28,13 +29,5 @@ export class CO2ScrubberRating {
     }
 
     return this.binaryInput[0].join('');
-  };
-
-  private filterOnBitInPosition = (
-    array: string[],
-    firstBit: string,
-    position: number
-  ) => {
-    return array[position] === firstBit;
   };
 }

@@ -1,5 +1,6 @@
 import {getFromPosition} from '../common/arrays/get-from-position';
 import {getMostFrequent} from '../common/arrays/get-most-frequent';
+import {filterOnBitInPosition} from './filter-on-bit-in-position';
 
 export class OxygenGeneratorRating {
   private binaryInput: Array<Array<string>>;
@@ -19,7 +20,7 @@ export class OxygenGeneratorRating {
       );
 
       this.binaryInput = this.binaryInput.filter(arr =>
-        this.filterOnBitInPosition(arr, mostCommonBit, i)
+        filterOnBitInPosition(arr, mostCommonBit, i)
       );
 
       if (this.binaryInput.length === 1) {
@@ -28,13 +29,5 @@ export class OxygenGeneratorRating {
     }
 
     return this.binaryInput[0].join('');
-  };
-
-  private filterOnBitInPosition = (
-    array: string[],
-    firstBit: string,
-    position: number
-  ) => {
-    return array[position] === firstBit;
   };
 }
